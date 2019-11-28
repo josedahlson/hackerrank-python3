@@ -16,17 +16,16 @@ import sys
 def gradingStudents(grades):
     # Write your code here
     new_list = []
-    for num in grades:
-        if 37 < num < 101:
-            if (num + 1) % 5 == 0:
-                new_list.append(num + 1)
-            elif (num + 2) % 5 == 0:
-                new_list.append(num + 2)
-            else:
-                new_list.append(num)
-        elif num < 37:
-            new_list.append(num)
-    return new_list
+    for grade in grades:
+        if grade > 37:
+            if grade % 5 == 3:
+                grade += 2
+            elif grade % 5 == 4:
+                grade += 1
+            new_list.append(grade)
+        else:
+            new_list.append(grade)
+    return(new_list)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
